@@ -169,7 +169,8 @@ el: "#app",
 
 
     data: {
-
+        contacts: contatti,
+        contactImage: `../img/avatar${contatti.avatar}.jpg`,
 },
 
     methods: {

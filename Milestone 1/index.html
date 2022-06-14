@@ -13,8 +13,8 @@
 <body>
     <div class="green-bg"></div>
     <div id="app">
-        <div class="container">
-            <div class="app-container">
+        <div class="app-container">
+            <div class="container">
                 <div class="row">                
                     <div class="col col-4 left-col">
 
@@ -40,17 +40,22 @@
                         
                         <input type="text" placeholder="Cerca o inizia una nuova chat" class="w-100">
 
-                        <div class="contects-container">
-                            <ul>
-                                <li>
-                                    <img src="../img/avatar_1.jpg" alt="Michele's profile image">
-                                    <h5>Michele</h5>
-                                    <div class="">Ultimo messaggio inviato</div>
-                                    <div class="">12:00</div>
+                        <div class="contacts-container d-flex flex-row">
+                            <ul class="w-100">
+                                <li v-for="contact in contacts" class="d-flex justify-content-between">
+                                    <div class="d-flex">
+                                        <img :src="contactImage" alt="Michele's profile image">
+                                        <div class="notifications-text d-flex flex-column">
+                                            <h5>{{contact.name}}</h5>
+                                            <div class="">Ultimo messaggio inviato</div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="">12:00</div>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
-
                     </div>
 
                     <div class="col col-8 right-col"></div>
