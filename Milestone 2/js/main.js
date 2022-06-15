@@ -169,7 +169,7 @@ const contatti = [
     
     
         data: {
-    
+            contacts: contatti,
     },
     
         methods: {
