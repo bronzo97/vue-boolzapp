@@ -10,17 +10,17 @@
 .app-container {
     background-color: rgb(0, 183, 255);
     height: calc(100vh - 32px);
-    margin: 16px 0;
-}
-
-.container {
-    margin: 0 auto;
+    margin: 16px auto;
+    overflow: hidden;
     position: relative;
 }
 
+/* .container {
+    position: relative;
+} */
+
 .left-col {
     background-color: azure;
-
 }
 
 .right-col {
@@ -28,18 +28,26 @@
 
 }
 
-.profile-left-col {
+.profile-left-col,
+.profile-right-col {
     display: flex;
     align-items: center;
 }
 
-.your-profile {
+.your-profile,
+.contact-chat,
+.text-chat {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-shrink: 0;
 }
 
-.your-profile img {
+.contacts-container {
+    overflow: auto;
+}
+
+.your-profile img, .contact-chat img  {
     width: 50px;
     border-radius: 2rem;
 }
@@ -80,3 +88,48 @@ ul {
     padding-inline-start: 0px;
 }
 
+.chat-content {
+    background-image: url('../img/mine.jpg');
+    height: 100%;
+}
+
+.message-box {
+    display: flex;
+    margin: 1rem;
+}
+
+.sent {
+    justify-content: flex-end;
+}
+
+.received {
+    justify-content: flex-start;
+}
+
+.msg-sent {
+    background-color: #008000;
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+}
+
+.msg-received {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+}
+
+.msg-time {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+    font-size: 0.8rem;
+}
+.text-chat {
+    padding: 0.5rem;
+}
+
+.input-text {
+    margin: 0.5rem;
+}

@@ -13,10 +13,10 @@
 <body>
     <div class="green-bg"></div>
     <div id="app">
-        <div class="app-container">
-            <div class="container">
-                <div class="row">                
-                    <div class="col col-4 left-col">
+        <div class="app-container container overflow-hidden">
+            <!-- <div class="container"> -->
+                <div class="row h-100">                
+                    <div class="col col-4 left-col d-flex flex-column h-100">
 
                         <div class="your-profile">
                                 <div class="profile-left-col">
@@ -42,26 +42,63 @@
 
                         <div class="contacts-container d-flex flex-row">
                             <ul class="w-100">
-                                <li v-for="contact in contacts" class="d-flex justify-content-between">
+                                <li v-for="(contact, i) in contacts" class="d-flex justify-content-between">
                                     <div class="d-flex">
-                                        <img :src="contactImage" alt="Michele's profile image">
+                                        <img :src="`../img/avatar${contact.avatar}.jpg`" alt="Michele's profile image">
                                         <div class="notifications-text d-flex flex-column">
                                             <h5>{{contact.name}}</h5>
                                             <div class="">Ultimo messaggio inviato</div>
                                         </div>
                                     </div>
                                     <div class="d-flex">
-                                        <div class="">12:00</div>
+                                        <div class="time">12:00</div>
                                     </div>
                                 </li>
                             </ul>
                         </div>
                     </div>
 
-                    <div class="col col-8 right-col"></div>
+                    <div class="col col-8 right-col h-100 d-flex flex-column">
+                        <div class="contact-chat">
+                            <div class="profile-right-col">
+                                <img src="../img/avatar_io.jpg" alt="Your profile image">
+                                <h5>Sofia</h5>
+                            </div>
+                            <div class="profile-icons">
+                                <div class="profile-icon"><i class="fa-solid fa-circle-notch"></i></div>
+                                <div class="profile-icon"><i class="fa-solid fa-paperclip"></i></div>
+                                <div class="profile-icon"><i class="fa-solid fa-ellipsis-vertical"></i></div>
+                            </div>
+                        </div>
+                        <div class="chat-content d-flex flex-column overflow-auto">
+                            <div class="message-box sent">
+                                <div class="message msg-sent">Hai portato a spasso il cane?
+                                <div class="msg-time">12:00</div>    
+                                </div>                                
+                            </div>
+                            <div class="message-box sent">
+                                <div class="message msg-sent">Hai portato a spasso il cane?
+                                <div class="msg-time">12:00</div>    
+                                </div>                                
+                            </div>
+                            <div class="message-box received">
+                                <div class="message msg-received">Tutto fatto!!
+                                <div class="msg-time">12:00</div>    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-chat">
+                            <div class="profile-right-col">
+                                <i class="fa-regular fa-face-smile fs-5"></i>
+                            </div>
+                        <input type="text" placeholder="Scrivi un messaggio" class="w-100 input-text">
+
+                        <i class="fa-solid fa-microphone fs-5"></i>
+                        </div>
+                    </div>
                 </div>
 
-            </div>
+            <!-- </div> -->
         </div>
     </div>
 
