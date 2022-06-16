@@ -171,12 +171,33 @@ const contatti = [
         data: {
             contacts: contatti,
             activeUser: '',
+            newMessage: '',
     },
     
         methods: {
             setActiveUser(contact) {
                 console.log('clicked account');
                 this.activeUser = contact;
+            },
+            callEvent() {
+                console.log(this.newMessage);
+                this.activeUser.messages.push(
+                {
+                    message: this.newMessage,
+                    status: 'sent',
+                });
+                
+            },
+            userReply() {
+                console.log('userReply');
+                setTimeout(() => {
+                    this.activeUser.messages.push(
+                        {
+                            message: 'ok',
+                            status: 'received',
+                        });
+                }, 1000);
+
             },
         }
     });

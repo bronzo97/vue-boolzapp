@@ -71,9 +71,9 @@
                             </div>
                         </div>
                         <div class="chat-content d-flex flex-column overflow-auto">
-                            <div v-for="msg in activeUser.messages" class="message-box" :class="[msg.status === 'sent' ? 'sent' : 'received']">
+                            <div v-for="msg in activeUser.messages" :class="[msg.status === 'sent' ? 'sent' : 'received', 'message-box']">
 
-                                <div :class="[msg.status === 'sent' ? 'msg-sent' : 'msg-received', message]">{{msg.message}}
+                                <div :class="[msg.status === 'sent' ? 'msg-sent' : 'msg-received']">{{msg.message}}
                                 <div class="msg-time">12:00</div>    
                                 </div>                                
                             </div>
@@ -82,7 +82,7 @@
                             <div class="profile-right-col">
                                 <i class="fa-regular fa-face-smile fs-5"></i>
                             </div>
-                        <input type="text" placeholder="Scrivi un messaggio" class="w-100 input-text">
+                        <input type="text" placeholder="Scrivi un messaggio" class="w-100 input-text" @keyup.enter="callEvent(); userReply()" v-model="newMessage">
 
                         <i class="fa-solid fa-microphone fs-5"></i>
                         </div>
