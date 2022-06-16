@@ -61,8 +61,8 @@
                     <div class="col col-8 right-col h-100 d-flex flex-column">
                         <div class="contact-chat">
                             <div class="profile-right-col">
-                                <img src="../img/avatar_io.jpg" alt="Your profile image">
-                                <h5>Sofia</h5>
+                                <img :src="`../img/avatar${activeUser.avatar}.jpg`" alt="Profile image">
+                                <h5>{{activeUser.name}}</h5>
                             </div>
                             <div class="profile-icons">
                                 <div class="profile-icon"><i class="fa-solid fa-circle-notch"></i></div>
@@ -71,8 +71,9 @@
                             </div>
                         </div>
                         <div class="chat-content d-flex flex-column overflow-auto">
-                            <div v-for="msg in contacts" class="message-box sent">
-                                <div class="message msg-sent">{{msg.messages}}
+                            <div v-for="msg in activeUser.messages" class="message-box" :class="[msg.status === 'sent' ? 'sent' : 'received']">
+
+                                <div :class="[msg.status === 'sent' ? 'msg-sent' : 'msg-received', message]">{{msg.message}}
                                 <div class="msg-time">12:00</div>    
                                 </div>                                
                             </div>
