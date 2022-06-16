@@ -42,7 +42,7 @@
 
                         <div class="contacts-container d-flex flex-row">
                             <ul class="w-100">
-                                <li v-for="(contact, i) in contacts" class="d-flex justify-content-between">
+                                <li v-for="contact in contacts" class="d-flex justify-content-between" @click="setActiveUser(contact)">
                                     <div class="d-flex">
                                         <img :src="`../img/avatar${contact.avatar}.jpg`" alt="Michele's profile image">
                                         <div class="notifications-text d-flex flex-column">
@@ -71,20 +71,10 @@
                             </div>
                         </div>
                         <div class="chat-content d-flex flex-column overflow-auto">
-                            <div class="message-box sent">
-                                <div class="message msg-sent">Hai portato a spasso il cane?
+                            <div v-for="msg in contacts" class="message-box sent">
+                                <div class="message msg-sent">{{msg.messages}}
                                 <div class="msg-time">12:00</div>    
                                 </div>                                
-                            </div>
-                            <div class="message-box sent">
-                                <div class="message msg-sent">Hai portato a spasso il cane?
-                                <div class="msg-time">12:00</div>    
-                                </div>                                
-                            </div>
-                            <div class="message-box received">
-                                <div class="message msg-received">Tutto fatto!!
-                                <div class="msg-time">12:00</div>    
-                                </div>
                             </div>
                         </div>
                         <div class="text-chat">
