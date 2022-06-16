@@ -172,6 +172,7 @@ const contatti = [
             contacts: contatti,
             activeUser: '',
             newMessage: '',
+            textFilter: '',
     },
     
         methods: {
@@ -198,6 +199,11 @@ const contatti = [
                         });
                 }, 1000);
 
+            },
+            filterUsers() {
+                return this.contacts.filter(elem => {
+                    return elem.name.toLowerCase().includes(this.textFilter.toLowerCase());
+                });
             },
         }
     });

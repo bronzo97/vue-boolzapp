@@ -38,11 +38,11 @@
                             </div>
                         </div>
                         
-                        <input type="text" placeholder="Cerca o inizia una nuova chat" class="w-100">
+                        <input type="text" placeholder="Cerca o inizia una nuova chat" class="w-100" v-model="textFilter">
 
                         <div class="contacts-container d-flex flex-row">
                             <ul class="w-100">
-                                <li v-for="contact in contacts" class="d-flex justify-content-between" @click="setActiveUser(contact)">
+                                <li v-for="contact in filterUsers()" class="d-flex justify-content-between" @click="setActiveUser(contact)">
                                     <div class="d-flex">
                                         <img :src="`../img/avatar${contact.avatar}.jpg`" alt="Michele's profile image">
                                         <div class="notifications-text d-flex flex-column">
