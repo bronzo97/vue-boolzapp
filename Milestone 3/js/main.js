@@ -169,10 +169,14 @@ const contatti = [
     
     
         data: {
-    
+            contacts: contatti,
+            activeUser: '',
     },
     
         methods: {
-    
+            setActiveUser(contact) {
+                console.log('clicked account');
+                this.activeUser = contact;
+            },
         }
     });
