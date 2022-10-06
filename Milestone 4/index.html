@@ -16,7 +16,7 @@
         <div class="app-container container overflow-hidden">
             <!-- <div class="container"> -->
                 <div class="row h-100">                
-                    <div class="col col-4 left-col d-flex flex-column h-100">
+                    <div class="col col-4 left-col d-flex flex-column h-100 p-0">
 
                         <div class="your-profile">
                                 <div class="profile-left-col">
@@ -33,7 +33,7 @@
                         <div class="activate-notifications">
                             <i class="fa-solid fa-bell-slash"></i>
                             <div class="notifications-text d-flex flex-column">
-                                <h5>Ricevi notifiche di nuovi messaggi</h5>
+                                <h6>Ricevi notifiche di nuovi messaggi</h6>
                                 <p>Attiva notifiche desktop</p>
                             </div>
                         </div>
@@ -42,23 +42,23 @@
 
                         <div class="contacts-container d-flex flex-row">
                             <ul class="w-100">
-                                <li v-for="contact in filterUsers()" class="d-flex justify-content-between" @click="setActiveUser(contact)">
+                                <li v-for="contact in filterUsers()" class="d-flex justify-content-between chat" @click="setActiveUser(contact)">
                                     <div class="d-flex">
                                         <img :src="`../img/avatar${contact.avatar}.jpg`" alt="Michele's profile image">
                                         <div class="notifications-text d-flex flex-column">
-                                            <h5>{{contact.name}}</h5>
-                                            <div class="">Ultimo messaggio inviato</div>
+                                            <h5 class="m-0">{{contact.name}}</h5>
+                                            <p class="m-0">Ultimo messaggio inviato</p>
                                         </div>
                                     </div>
                                     <div class="d-flex">
-                                        <div class="time">12:00</div>
+                                        <p>12:00</p>
                                     </div>
                                 </li>
                             </ul>
                         </div>
                     </div>
 
-                    <div class="col col-8 right-col h-100 d-flex flex-column">
+                    <div class="col col-8 right-col h-100 d-flex flex-column p-0">
                         <div class="contact-chat">
                             <div class="profile-right-col">
                                 <img :src="`../img/avatar${activeUser.avatar}.jpg`" alt="Profile image">
@@ -79,12 +79,12 @@
                             </div>
                         </div>
                         <div class="text-chat">
-                            <div class="profile-right-col">
+                            <div class="profile-right-col p-3">
                                 <i class="fa-regular fa-face-smile fs-5"></i>
                             </div>
-                        <input type="text" placeholder="Scrivi un messaggio" class="w-100 input-text" @keyup.enter="callEvent(); userReply()" v-model="newMessage">
+                        <input type="text" placeholder="Scrivi un messaggio" class="w-100 h-100 input-text m-0" @keyup.enter="callEvent(); userReply()" v-model="newMessage">
 
-                        <i class="fa-solid fa-microphone fs-5"></i>
+                        <i class="fa-solid fa-microphone fs-5 p-3"></i>
                         </div>
                     </div>
                 </div>

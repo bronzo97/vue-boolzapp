@@ -173,6 +173,7 @@ const contatti = [
             activeUser: '',
             newMessage: '',
             textFilter: '',
+            lastMessage: '',
     },
     
         methods: {
@@ -187,6 +188,9 @@ const contatti = [
                     message: this.newMessage,
                     status: 'sent',
                 });
+
+                this.newMessage = "";
+
                 
             },
             userReply() {
@@ -205,5 +209,6 @@ const contatti = [
                     return elem.name.toLowerCase().includes(this.textFilter.toLowerCase());
                 });
             },
-        }
+            
+        },
     });
