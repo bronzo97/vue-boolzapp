@@ -127,6 +127,9 @@ ul {
     padding: 1rem;
     border-radius: 1rem;
     display: flex;
+    min-width: 30%;
+    /* max-width: 100%; */
+    position: relative;
 }
 
 .msg-received {
@@ -134,13 +137,18 @@ ul {
     padding: 1rem;
     border-radius: 1rem;
     display: flex;
+    min-width: 30%;
+    /* max-width: 100%; */
+    position: relative;
 }
 
 .msg-time {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
     display: flex;
     align-items: center;
-    margin-left: 1rem;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
 }
 .text-chat {
     padding: 0.5rem;
